@@ -2,7 +2,12 @@ library(readxl)
 library(dplyr)
 library(tidyr)
 
+# Raw Data
 
+Jan21_data_R <- read_excel("TSCYC Master Data List.xlsx",sheet = 1) 
+May21_data_R <- read_excel("TSCYC Master Data List.xlsx",sheet = 2) 
+Dec21_data_R <- read_excel("TSCYC Master Data List.xlsx",sheet = 3) 
+May22_data_R <- read_excel("TSCYC Master Data List.xlsx",sheet = 4) 
 
 
 # Reading datasets and dropping rows with missing values
@@ -20,26 +25,32 @@ May22_data <- May22_data %>%
 ## Response Level (RL) Scale Items
 ## Item 3,14,22,53,66,73,83,86,89
 
+replace_non_ones <- function(row) {
+  return(ifelse(row != 1, 0, row))
+}
+
+
+
 Jan21_RL <- Jan21_data %>% select(c('Participant','TSCYC Q.3','TSCYC Q.14','TSCYC Q.22','TSCYC Q.53',
                                  'TSCYC Q.66','TSCYC Q.73','TSCYC Q.83','TSCYC Q.86',
                                  'TSCYC Q.89'))
-Jan21_RL$Raw_Score <- apply(Jan21_RL[,-1],1,sum)
+Jan21_RL$Raw_Score <- apply(Jan21_RL[,-1], 2, replace_non_ones) %>% apply(1,sum)
 
 
 May21_RL <- May21_data %>% select(c('Participant','TSCYC Q.3','TSCYC Q.14','TSCYC Q.22','TSCYC Q.53',
                                     'TSCYC Q.66','TSCYC Q.73','TSCYC Q.83','TSCYC Q.86',
                                     'TSCYC Q.89'))
-May21_RL$Raw_Score <- apply(May21_RL[,-1],1,sum)
+May21_RL$Raw_Score <- apply(May21_RL[,-1], 2, replace_non_ones) %>% apply(1,sum)
 
 Dec21_RL <- Dec21_data %>% select(c('Participant','TSCYC Q.3','TSCYC Q.14','TSCYC Q.22','TSCYC Q.53',
                                     'TSCYC Q.66','TSCYC Q.73','TSCYC Q.83','TSCYC Q.86',
                                     'TSCYC Q.89'))
-Dec21_RL$Raw_Score <- apply(Dec21_RL[,-1],1,sum)
+Dec21_RL$Raw_Score <-  apply(Dec21_RL[,-1], 2, replace_non_ones) %>% apply(1,sum)
 
 May22_RL <- May22_data %>% select(c('Participant','TSCYC Q.3','TSCYC Q.14','TSCYC Q.22','TSCYC Q.53',
                                     'TSCYC Q.66','TSCYC Q.73','TSCYC Q.83','TSCYC Q.86',
                                     'TSCYC Q.89'))
-May22_RL$Raw_Score <- apply(May22_RL[,-1],1,sum)
+May22_RL$Raw_Score <- apply(May22_RL[,-1], 2, replace_non_ones) %>% apply(1,sum)
 
 #_______________________________________________________________________________
 ## Atypical Response (ATR) Scale Items
@@ -320,10 +331,12 @@ May22_SC$Raw_Score <- apply(May22_SC[,-1],1,sum)
 
 
 
+#_______________________________________________________________________________
+# Putting Raw Scores Together
+#_______________________________________________________________________________
 
 
-
-
+Jan21_TSCYC_Scoring <- data.frame()
 
 
 
