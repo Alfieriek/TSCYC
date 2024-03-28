@@ -336,13 +336,64 @@ May22_SC$Raw_Score <- apply(May22_SC[,-1],1,sum)
 #_______________________________________________________________________________
 
 
-Jan21_TSCYC_Scoring <- data.frame()
+Jan21_TSCYC_Scoring <- data.frame(Jan21_Participant = Jan21_data$Participant,
+                                  Jan21_RL_RawScore = Jan21_RL$Raw_Score,
+                                  Jan21_ATR_RawScore = Jan21_ATR$Raw_Score,
+                                  Jan21_ANX_RawScore = Jan21_ANX$Raw_Score,
+                                  Jan21_DEP_RawScore = Jan21_DEP$Raw_Score,
+                                  Jan21_ANG_RawScore = Jan21_ANG$Raw_Score,
+                                  Jan21_PTSI_RawScore = Jan21_PTSI$Raw_Score,
+                                  Jan21_PTSAV_RawScore = Jan21_PTSAV$Raw_Score,
+                                  Jan21_PTSAR_RawScore = Jan21_PTSAR$Raw_Score,
+                                  Jan21_PTS_TOT_RawScore = Jan21_PTS_TOT$PTSTotal,
+                                  Jan21_DIS_RawScore = Jan21_DIS$Raw_Score,
+                                  Jan21_SC_RawScore = Jan21_SC$Raw_Score)
+
+
+
+May21_TSCYC_Scoring <- data.frame(May21_Participant = May21_data$Participant,
+                                  May21_RL_RawScore = May21_RL$Raw_Score,
+                                  May21_ATR_RawScore = May21_ATR$Raw_Score,
+                                  May21_ANX_RawScore = May21_ANX$Raw_Score,
+                                  May21_DEP_RawScore = May21_DEP$Raw_Score,
+                                  May21_ANG_RawScore = May21_ANG$Raw_Score,
+                                  May21_PTSI_RawScore = May21_PTSI$Raw_Score,
+                                  May21_PTSAV_RawScore = May21_PTSAV$Raw_Score,
+                                  May21_PTSAR_RawScore = May21_PTSAR$Raw_Score,
+                                  May21_PTS_TOT_RawScore = May21_PTS_TOT$PTSTotal,
+                                  May21_DIS_RawScore = May21_DIS$Raw_Score,
+                                  May21_SC_RawScore = May21_SC$Raw_Score)
+
+
+Dec21_TSCYC_Scoring <- data.frame(Dec21_Participant = Dec21_data$Participant,
+                                  Dec21_RL_RawScore = Dec21_RL$Raw_Score,
+                                  Dec21_ATR_RawScore = Dec21_ATR$Raw_Score,
+                                  Dec21_ANX_RawScore = Dec21_ANX$Raw_Score,
+                                  Dec21_DEP_RawScore = Dec21_DEP$Raw_Score,
+                                  Dec21_ANG_RawScore = Dec21_ANG$Raw_Score,
+                                  Dec21_PTSI_RawScore = Dec21_PTSI$Raw_Score,
+                                  Dec21_PTSAV_RawScore = Dec21_PTSAV$Raw_Score,
+                                  Dec21_PTSAR_RawScore = Dec21_PTSAR$Raw_Score,
+                                  Dec21_PTS_TOT_RawScore = Dec21_PTS_TOT$PTSTotal,
+                                  Dec21_DIS_RawScore = Dec21_DIS$Raw_Score,
+                                  Dec21_SC_RawScore = Dec21_SC$Raw_Score)
 
 
 
 
 
-
+May22_TSCYC_Scoring <- data.frame(May22_Participant = May22_data$Participant,
+                                  May22_RL_RawScore = May22_RL$Raw_Score,
+                                  May22_ATR_RawScore = May22_ATR$Raw_Score,
+                                  May22_ANX_RawScore = May22_ANX$Raw_Score,
+                                  May22_DEP_RawScore = May22_DEP$Raw_Score,
+                                  May22_ANG_RawScore = May22_ANG$Raw_Score,
+                                  May22_PTSI_RawScore = May22_PTSI$Raw_Score,
+                                  May22_PTSAV_RawScore = May22_PTSAV$Raw_Score,
+                                  May22_PTSAR_RawScore = May22_PTSAR$Raw_Score,
+                                  May22_PTS_TOT_RawScore = May22_PTS_TOT$PTSTotal,
+                                  May22_DIS_RawScore = May22_DIS$Raw_Score,
+                                  May22_SC_RawScore = May22_SC$Raw_Score)
 
 
 
