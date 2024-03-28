@@ -17,6 +17,7 @@ May22_data <- Raw_May22_data %>% drop_na()
 
 # Sub-Scales 
 
+#_______________________________________________________________________________
 ## Response Level (RL) Scale Items
 ## Item 3,14,22,53,66,73,83,86,89
 
@@ -41,6 +42,7 @@ May22_RL <- May22_data %>% select(c('TSCYC Q.3','TSCYC Q.14','TSCYC Q.22','TSCYC
                                     'TSCYC Q.89')) 
 May22_RL$Raw_Score <- apply(May22_RL,1,sum)
 
+#_______________________________________________________________________________
 ## Atypical Response (ATR) Scale Items
 ## Item 9,30,37,40,51,60,64,77,79
 
@@ -144,6 +146,178 @@ May22_ANG <- May22_data %>% select(c('TSCYC Q.1','TSCYC Q.15','TSCYC Q.23','TSCY
                                      'TSCYC Q.43','TSCYC Q.58','TSCYC Q.62','TSCYC Q.87',
                                      'TSCYC Q.90'))
 May22_ANG$Raw_Score <- apply(May22_ANG,1,sum)
+
+
+
+
+#_______________________________________________________________________________
+## Post traumatic Stress-Intrusion (PTS-I)
+## Item 4,11,19,24,27,36,63,69,80
+
+Jan21_PTSI <- Jan21_data %>% select(c('TSCYC Q.4','TSCYC Q.11', 'TSCYC Q.19', 'TSCYC Q.24','TSCYC Q.27',
+                                      'TSCYC Q.36','TSCYC Q.63','TSCYC Q.69','TSCYC Q.80'))
+
+Jan21_PTSI$Raw_Score <- apply(Jan21_PTSI,1,sum)
+
+
+May21_PTSI <- May21_data %>% select(c('TSCYC Q.4','TSCYC Q.11', 'TSCYC Q.19', 'TSCYC Q.24','TSCYC Q.27',
+                                      'TSCYC Q.36','TSCYC Q.63','TSCYC Q.69','TSCYC Q.80'))
+May21_PTSI$Raw_Score <- apply(May21_PTSI,1,sum)
+
+Dec21_PTSI <- Dec21_data %>% select(c('TSCYC Q.4','TSCYC Q.11', 'TSCYC Q.19', 'TSCYC Q.24','TSCYC Q.27',
+                                      'TSCYC Q.36','TSCYC Q.63','TSCYC Q.69','TSCYC Q.80'))
+Dec21_PTSI$Raw_Score <- apply(Dec21_PTSI,1,sum)
+
+May22_PTSI <- May22_data %>% select(c('TSCYC Q.4','TSCYC Q.11', 'TSCYC Q.19', 'TSCYC Q.24','TSCYC Q.27',
+                                      'TSCYC Q.36','TSCYC Q.63','TSCYC Q.69','TSCYC Q.80'))
+May22_PTSI$Raw_Score <- apply(May22_PTSI,1,sum)
+
+
+
+#_______________________________________________________________________________
+## Post traumatic Stress-Avoidance (PTS-AV)
+## Item 8,13,29,39,49,55,70,72,81
+
+Jan21_PTSAV <- Jan21_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.81'))
+
+Jan21_PTSAV$Raw_Score <- apply(Jan21_PTSAV,1,sum)
+
+
+May21_PTSAV <- May21_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.81'))
+
+May21_PTSAV$Raw_Score <- apply(May21_PTSAV,1,sum)
+
+Dec21_PTSAV <- Dec21_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.81'))
+
+Dec21_PTSAV$Raw_Score <- apply(Dec21_PTSAV,1,sum)
+
+May22_PTSAV <- May22_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.81'))
+
+May22_PTSAV$Raw_Score <- apply(May22_PTSAV,1,sum)
+
+
+
+#_______________________________________________________________________________
+## Post traumatic Stress-Arousal (PTS-AR)
+## Item 10, 17, 26, 45, 47, 48, 56, 74, 82, 
+
+Jan21_PTSAR <- Jan21_data %>% select(c('TSCYC Q.10','TSCYC Q.17', 'TSCYC Q.26', 'TSCYC Q.45','TSCYC Q.47',
+                                       'TSCYC Q.48','TSCYC Q.56','TSCYC Q.74','TSCYC Q.82'))
+
+Jan21_PTSAR$Raw_Score <- apply(Jan21_PTSAR,1,sum)
+
+
+May21_PTSAR <- May21_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.82'))
+
+May21_PTSAR$Raw_Score <- apply(May21_PTSAR,1,sum)
+
+Dec21_PTSAR <- Dec21_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.82'))
+
+Dec21_PTSAR$Raw_Score <- apply(Dec21_PTSAR,1,sum)
+
+May22_PTSAR <- May22_data %>% select(c('TSCYC Q.8','TSCYC Q.13', 'TSCYC Q.29', 'TSCYC Q.39','TSCYC Q.49',
+                                       'TSCYC Q.55','TSCYC Q.70','TSCYC Q.72','TSCYC Q.82'))
+
+May22_PTSAR$Raw_Score <- apply(May22_PTSAR,1,sum)
+
+
+#______________________________________________________________________________
+## Posttraumatic Stress-Total (PTS-TOT)
+## This is the sum of PTS-I + PTS-AV + PTS-AR scales
+
+ Jan21_PTS_TOT <- data.frame(PTS_I = Jan21_PTSI$Raw_Score,
+                             PTS_AV = Jan21_PTSAV$Raw_Score,
+                             PTS_AR = Jan21_PTSAR$Raw_Score)
+ 
+ Jan21_PTS_TOT$PTSTotal <-  Jan21_PTS_TOT %>% apply(1,sum)
+ 
+# May21
+ 
+ May21_PTS_TOT <- data.frame(PTS_I = May21_PTSI$Raw_Score,
+                             PTS_AV = May21_PTSAV$Raw_Score,
+                             PTS_AR = May21_PTSAR$Raw_Score)
+ 
+ May21_PTS_TOT$PTSTotal <-  May21_PTS_TOT %>% apply(1,sum) 
+ 
+# Dec21
+ 
+ Dec21_PTS_TOT <- data.frame(PTS_I = Dec21_PTSI$Raw_Score,
+                             PTS_AV = Dec21_PTSAV$Raw_Score,
+                             PTS_AR = Dec21_PTSAR$Raw_Score)
+ 
+ Dec21_PTS_TOT$PTSTotal <-  Dec21_PTS_TOT %>% apply(1,sum) 
+ 
+# May22
+ 
+ May22_PTS_TOT <- data.frame(PTS_I = May22_PTSI$Raw_Score,
+                             PTS_AV = May22_PTSAV$Raw_Score,
+                             PTS_AR = May22_PTSAR$Raw_Score)
+ 
+ May22_PTS_TOT$PTSTotal <-  May22_PTS_TOT %>% apply(1,sum) 
+ 
+#_______________________________________________________________________________
+##Dissociation (DIS)
+## Item 5, 25, 28, 33, 38, 46, 52, 78, 85
+
+Jan21_DIS <- Jan21_data %>% select(c('TSCYC Q.5','TSCYC Q.25', 'TSCYC Q.28', 'TSCYC Q.33','TSCYC Q.38',
+                                     'TSCYC Q.46','TSCYC Q.52','TSCYC Q.78','TSCYC Q.85'))
+
+Jan21_DIS$Raw_Score <- apply(Jan21_DIS,1,sum)
+
+
+May21_DIS <- May21_data %>% select(c('TSCYC Q.5','TSCYC Q.25', 'TSCYC Q.28', 'TSCYC Q.33','TSCYC Q.38',
+                                     'TSCYC Q.46','TSCYC Q.52','TSCYC Q.78','TSCYC Q.85'))
+
+May21_DIS$Raw_Score <- apply(May21_DIS,1,sum)
+
+Dec21_DIS <- Dec21_data %>% select(c('TSCYC Q.5','TSCYC Q.25', 'TSCYC Q.28', 'TSCYC Q.33','TSCYC Q.38',
+                                     'TSCYC Q.46','TSCYC Q.52','TSCYC Q.78','TSCYC Q.85'))
+
+Dec21_DIS$Raw_Score <- apply(Dec21_DIS,1,sum)
+
+May22_DIS <- May22_data %>% select(c('TSCYC Q.5','TSCYC Q.25', 'TSCYC Q.28', 'TSCYC Q.33','TSCYC Q.38',
+                                     'TSCYC Q.46','TSCYC Q.52','TSCYC Q.78','TSCYC Q.85'))
+
+May22_DIS$Raw_Score <- apply(May22_DIS,1,sum)
+
+
+#_______________________________________________________________________________
+##Sexual Concerns (SC)
+## Item 6, 12, 16, 20, 35, 50, 59, 65, 75
+
+Jan21_SC <- Jan21_data %>% select(c('TSCYC Q.6','TSCYC Q.12', 'TSCYC Q.16', 'TSCYC Q.20','TSCYC Q.35',
+                                    'TSCYC Q.50','TSCYC Q.59','TSCYC Q.65','TSCYC Q.75'))
+
+Jan21_SC$Raw_Score <- apply(Jan21_SC,1,sum)
+
+
+May21_SC <- May21_data %>% select(c('TSCYC Q.6','TSCYC Q.12', 'TSCYC Q.16', 'TSCYC Q.20','TSCYC Q.35',
+                                    'TSCYC Q.50','TSCYC Q.59','TSCYC Q.65','TSCYC Q.75'))
+
+May21_SC$Raw_Score <- apply(May21_SC,1,sum)
+
+Dec21_SC <- Dec21_data %>% select(c('TSCYC Q.6','TSCYC Q.12', 'TSCYC Q.16', 'TSCYC Q.20','TSCYC Q.35',
+                                    'TSCYC Q.50','TSCYC Q.59','TSCYC Q.65','TSCYC Q.75'))
+
+Dec21_SC$Raw_Score <- apply(Dec21_SC,1,sum)
+
+May22_SC <- May22_data %>% select(c('TSCYC Q.6','TSCYC Q.12', 'TSCYC Q.16', 'TSCYC Q.20','TSCYC Q.35',
+                                    'TSCYC Q.50','TSCYC Q.59','TSCYC Q.65','TSCYC Q.75'))
+
+May22_SC$Raw_Score <- apply(May22_SC,1,sum)
+
+
+
+
+
+
+
 
 
 
