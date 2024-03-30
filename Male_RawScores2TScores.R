@@ -3,10 +3,12 @@ library(tidyr)
 library(readxl)
 
 
-# Jan21_RS <- read_excel("TSCYC_clean.3.29.xlsx",sheet = 1) 
+Jan21_RS <- read_excel("TSCYC_clean.3.29.xlsx",sheet = 1)
 # May21_RS <- read_excel("TSCYC_clean.3.29.xlsx",sheet = 2) 
 # Dec21_RS <- read_excel("TSCYC_clean.3.29.xlsx",sheet = 3) 
 # May22_RS <- read_excel("TSCYC_clean.3.29.xlsx",sheet = 4) 
+
+Jan21_M_RS <- Jan21_RS %>% filter(Gender == 'M')
 
 
 #_________________________________________________________1
@@ -14,12 +16,22 @@ library(readxl)
 ########################### RL #########################
 Male_Rl_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 1)
 
+A <- Jan21_M_RS %>% select(ID,Jan21_RL_RawScore) %>% rename(Raw_Score = Jan21_RL_RawScore)
+
+Jan21_M_Rl_TS <- merge(A, Male_Rl_TS, by = "Raw_Score", all = FALSE )
+Jan21_M_Rl_TS <- Jan21_M_Rl_TS %>% select(-Raw_Score) %>% rename(RL_T = T,
+                                                                 RL_Ptile  = Percentile)
+
+
 
 #_________________________________________________________2
 
 ########################### ATR #########################
 Male_ATR_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 2)
 
+B <- Jan21_M_RS %>% select(ID,Jan21_ATR_RawScore) %>% rename(Raw_Score = Jan21_ATR_RawScore)
+
+Jan21_M_ATR_TS <- merge(B, Male_ATR_TS, by = "Raw_Score", all = FALSE )
 
 
 
