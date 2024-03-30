@@ -15,7 +15,7 @@ Dec21_M_RS <- Dec21_RS %>% filter(Gender == 'M')
 #_________________________________________________________1
 
 ########################### RL #########################
-Male_Rl_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 1)
+Male_Rl_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 1)
 
 A <- Dec21_M_RS %>% select(ID,Dec21_RL_RawScore) %>% rename(Raw_Score = Dec21_RL_RawScore)
 
@@ -29,7 +29,7 @@ Dec21_M_Rl_TS <- Dec21_M_Rl_TS %>% rename(RL_Raw_Score = Raw_Score,
 #_________________________________________________________2
 
 ########################### ATR #########################
-Male_ATR_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 2)
+Male_ATR_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 2)
 
 B <- Dec21_M_RS %>% select(ID,Dec21_ATR_RawScore) %>% rename(Raw_Score = Dec21_ATR_RawScore)
 
@@ -43,7 +43,7 @@ Dec21_M_ATR_TS <- Dec21_M_ATR_TS %>% rename(ATR_Raw_Score = Raw_Score,
 #_________________________________________________________3
 
 ########################### ANX #########################
-Male_ANX_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 3)
+Male_ANX_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 3)
 
 C <- Dec21_M_RS %>% select(ID,Dec21_ANX_RawScore) %>% rename(Raw_Score = Dec21_ANX_RawScore)
 
@@ -57,7 +57,7 @@ Dec21_M_ANX_TS <- Dec21_M_ANX_TS  %>% rename(ANX_Raw_Score = Raw_Score,
 #_________________________________________________________4
 
 ########################### DEP #########################
-Male_DEP_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 4)
+Male_DEP_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 4)
 
 D <- Dec21_M_RS %>% select(ID,Dec21_DEP_RawScore) %>% rename(Raw_Score = Dec21_DEP_RawScore)
 
@@ -70,7 +70,7 @@ Dec21_M_DEP_TS <- Dec21_M_DEP_TS  %>% rename(DEP_Raw_Score = Raw_Score,
 #_________________________________________________________5
 
 ########################### ANG #########################
-Male_ANG_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 5)
+Male_ANG_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 5)
 
 E <- Dec21_M_RS %>% select(ID,Dec21_ANG_RawScore) %>% rename(Raw_Score = Dec21_ANG_RawScore)
 
@@ -82,7 +82,7 @@ Dec21_M_ANG_TS <- Dec21_M_ANG_TS  %>% rename(ANG_Raw_Score = Raw_Score,
 
 #_________________________________________________________6
 ########################### PTSI #########################
-Male_PTSI_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 6)
+Male_PTSI_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 6)
 
 f <- Dec21_M_RS %>% select(ID,Dec21_PTSI_RawScore) %>% rename(Raw_Score = Dec21_PTSI_RawScore)
 
@@ -95,7 +95,7 @@ Dec21_M_PTSI_TS <- Dec21_M_PTSI_TS %>% rename(PTSI_Raw_Score = Raw_Score,
 
 #_________________________________________________________7
 ########################### PTSAV #########################
-Male_PTSAV_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 7)
+Male_PTSAV_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 7)
 
 G <- Dec21_M_RS %>% select(ID,Dec21_PTSAV_RawScore) %>% rename(Raw_Score = Dec21_PTSAV_RawScore)
 
@@ -109,7 +109,7 @@ Dec21_M_PTSAV_TS <- Dec21_M_PTSAV_TS %>% rename(PTSAV_Raw_Score = Raw_Score,
 
 #_________________________________________________________8
 ########################### PTSAR #########################
-Male_PTSAR_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 8)
+Male_PTSAR_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 8)
 
 H <- Dec21_M_RS %>% select(ID,Dec21_PTSAR_RawScore) %>% rename(Raw_Score = Dec21_PTSAR_RawScore)
 
@@ -122,7 +122,7 @@ Dec21_M_PTSAR_TS <- Dec21_M_PTSAR_TS %>% rename(PTSAR_Raw_Score = Raw_Score,
 
 #_________________________________________________________9
 ########################### PTS_TOT #########################
-Male_PTSTOT_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 9)
+Male_PTSTOT_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 9)
 
 I <- Dec21_M_RS %>% select(ID,Dec21_PTS_TOT_RawScore) %>% rename(Raw_Score = Dec21_PTS_TOT_RawScore)
 
@@ -135,7 +135,7 @@ Dec21_M_PTS_TOT_TS <- Dec21_M_PTS_TOT_TS %>% rename(PTS_TOT_Raw_Score = Raw_Scor
 
 #_________________________________________________________10
 ########################### DIS #########################
-Male_DIS_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 10)
+Male_DIS_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 10)
 
 J <- Dec21_M_RS %>% select(ID,Dec21_DIS_RawScore) %>% rename(Raw_Score = Dec21_DIS_RawScore)
 
@@ -147,7 +147,7 @@ Dec21_M_DIS_TS <- Dec21_M_DIS_TS%>% rename(DIS_Raw_Score = Raw_Score,
 #_________________________________________________________11
 ########################### SC #########################
 
-Male_SC_TS <- read_excel("Male_T_scores_v2.xlsx",sheet = 11)
+Male_SC_TS <- read_excel("Male_T_scores_v3.xlsx",sheet = 11)
 
 
 K <-  Dec21_M_RS %>% select(ID,Dec21_SC_RawScore) %>% rename(Raw_Score = Dec21_SC_RawScore)
