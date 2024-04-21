@@ -48,6 +48,7 @@ May22_T_Scores <- May22_Data %>%
 
 colnames(May22_T_Scores) <- paste(colnames(May22_T_Scores), "May22", sep = "_")
 
+#-------------------------------------------------------------------------------
 
 Jan_May_21_long <- list()
 
@@ -57,7 +58,14 @@ for (i in c(1:11)) {
     gather(key = "Scale", value = "T_Score")
 }
 
+Jan_May_21_long <- setNames(Jan_May_21_long, Scales_name)
+
+
+#---------------------------------#---#-----------------------------------------
+
+
 Jan_May_21_SignTest <- list()
+
 
 for (i in c(1:11)) {
   Jan_May_21_SignTest[[i]] <- Jan_May_21_long[[i]] %>% wilcox_test (T_Score ~ Scale, paired = TRUE)
@@ -66,7 +74,7 @@ for (i in c(1:11)) {
 
 Jan_May_21_SignTest <- setNames(Jan_May_21_SignTest, Scales_name)
 
-
+#-------------------------------------------------------------------------------
 Dec_May_22_long <- list()
 
 for (i in c(1:11)) {
@@ -74,6 +82,12 @@ for (i in c(1:11)) {
     select(contains(T_Scores_Col[i]))%>%
     gather(key = "Scale", value = "T_Score")
 }
+
+Dec_May_22_long <- setNames(Dec_May_22_long, Scales_name)
+
+
+#---------------------------------#---#-----------------------------------------
+
 
 Dec_May_22_SignTest <- list()
 
@@ -83,8 +97,6 @@ for (i in c(1:11)) {
 }
 
 Dec_May_22_SignTest <- setNames(Dec_May_22_SignTest, Scales_name)
-
-
 
 
 
