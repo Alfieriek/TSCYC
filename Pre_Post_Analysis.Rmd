@@ -1,3 +1,15 @@
+---
+title: "Pre_Post Scale T Score Analysis"
+author: "Alfieri EK & Obed Asare"
+date: "2024-04-21"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(dplyr)
 library(tidyr)
 library(readxl)
@@ -9,8 +21,6 @@ Jan21_Data <- read.csv("Jan21_Scores.csv", header = T)
 May21_Data <- read.csv("May21_Scores.csv", header = T)
 Dec21_Data <- read.csv("Dec21_Scores.csv", header = T)
 May22_Data <- read.csv("May22_Scores.csv", header = T)
-
-str(Jan21_Data)
 
 T_Scores_Col <- c(grep("_T$", names(Jan21_Data), value = TRUE))
 Scales_name <- c("ResponseLevel", "AtypicalResponse", "Anxiety", "Depression", "Anger_Aggression",
@@ -47,7 +57,11 @@ May22_T_Scores <- May22_Data %>%
   select(any_of(T_Scores_Col))
 
 colnames(May22_T_Scores) <- paste(colnames(May22_T_Scores), "May22", sep = "_")
+```
 
+# Jan21 and May21 Comparison
+
+```{r comment=NA,echo=FALSE}
 #-------------------------------------------------------------------------------
 
 Jan_May_21_long <- list()
@@ -73,7 +87,12 @@ for (i in c(1:11)) {
 }
 
 Jan_May_21_SignTest <- setNames(Jan_May_21_SignTest, Scales_name)
+Jan_May_21_SignTest
+``` 
 
+# Dec21 and May22 Comparison
+
+```{r comment=NA,echo=FALSE}
 #-------------------------------------------------------------------------------
 Dec_May_22_long <- list()
 
@@ -98,4 +117,7 @@ for (i in c(1:11)) {
 
 Dec_May_22_SignTest <- setNames(Dec_May_22_SignTest, Scales_name)
 
-Dec_May_22_SignTest$ResponseLevel$p
+
+Dec_May_22_SignTest
+```
+
