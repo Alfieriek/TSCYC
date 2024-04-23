@@ -48,7 +48,39 @@ May22_T_Scores <- May22_Data %>%
 
 colnames(May22_T_Scores) <- paste(colnames(May22_T_Scores), "May22", sep = "_")
 
+# WAVE 1
 #-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+Jan_May_21 <- list()
+
+for (i in c(1:11)) {
+  Jan_May_21[[i]] <- cbind(Jan21_T_Scores,May21_T_Scores) %>% 
+    select(contains(T_Scores_Col[i]))
+}
+
+Jan_May_21 <- setNames(Jan_May_21, Scales_name)
+
+
+
+Jan_May_21_SummaryStats <- list()
+
+for (i in c(1:11)) {
+  A <- Jan_May_21[[i]]
+  B <- Jan_May_21[[i]]
+  colnames(A) <- paste(colnames(A), "Mean", sep = "_")
+  colnames(B) <- paste(colnames(B), "SD", sep = "_")
+  MU <- A %>% apply(2,mean) 
+  SD <- B %>% apply(2, sd)
+  Jan_May_21_SummaryStats[[i]] <- c(MU,SD)
+}
+
+
+Jan_May_21_SummaryStats <- setNames(Jan_May_21_SummaryStats, Scales_name)
+
+
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+
 
 Jan_May_21_long <- list()
 
@@ -61,8 +93,8 @@ for (i in c(1:11)) {
 Jan_May_21_long <- setNames(Jan_May_21_long, Scales_name)
 
 
-#---------------------------------#---#-----------------------------------------
-
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 
 Jan_May_21_SignTest <- list()
 
@@ -74,7 +106,40 @@ for (i in c(1:11)) {
 
 Jan_May_21_SignTest <- setNames(Jan_May_21_SignTest, Scales_name)
 
-#-------------------------------------------------------------------------------
+
+# WAVE2
+#---------------------------------#---#-----------------------------------------
+#---------------------------------#---#-----------------------------------------
+Dec_May_22 <- list()
+
+for (i in c(1:11)) {
+  Dec_May_22[[i]] <- cbind(Dec21_T_Scores,May22_T_Scores) %>% 
+    select(contains(T_Scores_Col[i]))
+}
+
+Dec_May_22 <- setNames(Dec_May_22, Scales_name)
+
+
+
+Dec_May_22_SummaryStats <- list()
+
+for (i in c(1:11)) {
+  A <- Dec_May_22[[i]]
+  B <- Dec_May_22[[i]]
+  colnames(A) <- paste(colnames(A), "Mean", sep = "_")
+  colnames(B) <- paste(colnames(B), "SD", sep = "_")
+  MU <- A %>% apply(2,mean) 
+  SD <- B %>% apply(2, sd)
+  Dec_May_22_SummaryStats[[i]] <- c(MU,SD)
+}
+Dec_May_22_SummaryStats <- setNames(Dec_May_22_SummaryStats, Scales_name)
+
+
+Dec_May_22_SummaryStats
+#---------------------------------#---#-----------------------------------------
+#---------------------------------#---#-----------------------------------------
+
+
 Dec_May_22_long <- list()
 
 for (i in c(1:11)) {
@@ -87,6 +152,7 @@ Dec_May_22_long <- setNames(Dec_May_22_long, Scales_name)
 
 
 #---------------------------------#---#-----------------------------------------
+#---------------------------------#---#-----------------------------------------
 
 
 Dec_May_22_SignTest <- list()
@@ -97,5 +163,3 @@ for (i in c(1:11)) {
 }
 
 Dec_May_22_SignTest <- setNames(Dec_May_22_SignTest, Scales_name)
-
-Dec_May_22_SignTest$ResponseLevel$p
