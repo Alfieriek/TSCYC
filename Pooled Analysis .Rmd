@@ -1,3 +1,16 @@
+---
+title: "Pooled TSCYC"
+author: "Alfieri Ek Obed Asare"
+date: "2024-04-24"
+output: pdf_document
+classoption: landscape
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
 library(dplyr)
 library(tidyr)
 library(readxl)
@@ -42,10 +55,14 @@ Post_T_Scores <- Post %>%
 colnames(Post_T_Scores) <- paste(colnames(Post_T_Scores), "Post", sep = "_")
 
 
+```
 
-# Pre vs Post
-#-------------------------------------------------------------------------------
-#-------------------------------------------------------------------------------
+# Pre (Jan 21, Dec 21) vs Post (May 21 ,May22)
+
+## Summary Statistics
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
+
 Pre_Post_Scale <- list()
 
 for (i in c(1:11)) {
@@ -71,10 +88,12 @@ for (i in c(1:11)) {
 
 
 Pre_Post_Scale_SummaryStats <- setNames(Pre_Post_Scale_SummaryStats, Scales_name)
+Pre_Post_Scale_SummaryStats
+```
 
 
-#---------------------------------------------------------------------------------------
 
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
 
 Pre_Post_Scale_long <- list()
 
@@ -85,6 +104,18 @@ for (i in c(1:11)) {
 }
 
 Pre_Post_Scale_long <- setNames(Pre_Post_Scale_long, Scales_name)
+
+```
+
+## T tests
+
+### Normality Check
+
+$H_0 :\text{The data is normally distributed.}$
+$H_1: \text{The data is not normally distributed.}$
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
+
 #---------------------------------t Test----------------------------------------------
 
 Pre_Post_Scale_Shapirotest <-  list()
@@ -98,7 +129,14 @@ for (i in c(1:11)) {
 Pre_Post_Scale_Shapirotest <- setNames(Pre_Post_Scale_Shapirotest, Scales_name)
 
 Pre_Post_Scale_Shapirotest
+```
 
+### Homogeneity of variances Check
+
+$H_0 :  \text{ The variances of the groups are equal.}$
+$H_1: \text{The variances of the groups are not equal.}$
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
 
 Pre_Post_Scale_Levenetest <-  list()
 
@@ -112,6 +150,11 @@ Pre_Post_Scale_Levenetest <- setNames(Pre_Post_Scale_Levenetest, Scales_name)
 
 Pre_Post_Scale_Levenetest
 
+```
+
+### T Tests (Alternative = two.sided)
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
 
 Pre_Post_Scale_TTest <- list()
 
@@ -125,10 +168,12 @@ for (i in c(1:11)) {
 Pre_Post_Scale_TTest <- setNames(Pre_Post_Scale_TTest, Scales_name)
 
 Pre_Post_Scale_TTest
-#---------------------------------------------------------------------------------------
-#---------------------------------Sign Test----------------------------------------------
+
+```
 
 
+## Sign Test (Alternative = two.sided)
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
 
 Pre_Post_Scale_SignTest <- list()
 
@@ -141,4 +186,7 @@ for (i in c(1:11)) {
 Pre_Post_Scale_SignTest <- setNames(Pre_Post_Scale_SignTest, Scales_name)
 
 
+
+Pre_Post_Scale_SignTest
+```
 
