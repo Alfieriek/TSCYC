@@ -160,7 +160,7 @@ Pre_Post_Scale_TTest <- list()
 
 
 for (i in c(1:11)) {
-  Pre_Post_Scale_TTest[[i]] <-t.test(T_Score ~ Scale, data =  Pre_Post_Scale_long[[i]], paired = F)
+  Pre_Post_Scale_TTest[[i]] <-t.test(T_Score ~ Scale, data =  Pre_Post_Scale_long[[i]], paired = T)
   
 }
 
@@ -189,4 +189,22 @@ Pre_Post_Scale_SignTest <- setNames(Pre_Post_Scale_SignTest, Scales_name)
 
 Pre_Post_Scale_SignTest
 ```
+
+## Cohen D (Effect Size)
+
+```{r comment=NA,echo=FALSE,warning=FALSE,message=FALSE}
+
+Cohen_d_Results <- list()
+
+for (i in c(1:11)) {
+  Cohen_d_Results[[i]] <- Pre_Post_Scale_long[[i]] %>% cohens_d(T_Score ~ Scale, paired = TRUE)
+}
+
+
+Cohen_d_Results <- setNames(Cohen_d_Results, Scales_name)
+
+
+Cohen_d_Results
+```
+
 
